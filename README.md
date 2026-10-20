@@ -19,6 +19,22 @@ flask --app app run --debug --port 4871
 
 ثم افتح http://127.0.0.1:4871. لا حسابات ولا قاعدة بيانات ولا مفاتيح سرية.
 
+## النشر على Render
+
+المستودع على GitHub يجب أن يحتوي `app.py` و`requirements.txt` في الجذر.
+
+1. من [render.com](https://render.com) اختر **New** ثم **Web Service**، واربط مستودع GitHub.
+2. استخدم هذه الإعدادات:
+
+| الإعداد | القيمة |
+| --- | --- |
+| Language | Python 3 |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `gunicorn app:app --bind 0.0.0.0:$PORT` |
+| Instance type | Free |
+
+ملف `render.yaml` يحمل الإعدادات نفسها إذا أنشأت الخدمة من Blueprint. بعد كل دفع إلى GitHub يعيد Render النشر تلقائياً.
+
 ## السلامة
 
 - حقل كلمة المرور للتجربة فقط. ليس داخل نموذج ولا يُرسل إلى الخادم.
