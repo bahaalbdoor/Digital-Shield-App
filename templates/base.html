@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}الدرع الرقمي{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/school-logo.png') }}" type="image/png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('home') }}">
+      <img class="logo" src="{{ url_for('static', filename='img/school-logo.png') }}" alt="شعار مدرسة حوفا المزار الثانوية الشاملة للبنين">
+      <span class="brand-name">الدرع الرقمي</span>
+    </a>
+    <nav class="primary-nav" aria-label="التنقل الرئيسي">
+      <a href="{{ url_for('home') }}" {% if active == "home" %}aria-current="page"{% endif %}>الرئيسية</a>
+      <a href="{{ url_for('passwords') }}" {% if active == "passwords" %}aria-current="page"{% endif %}>كلمات المرور</a>
+      <a href="{{ url_for('phishing') }}" {% if active == "phishing" %}aria-current="page"{% endif %}>التصيّد</a>
+      <a href="{{ url_for('breaches') }}" {% if active == "breaches" %}aria-current="page"{% endif %}>تسريب البيانات</a>
+      <a href="{{ url_for('quiz') }}" {% if active == "quiz" %}aria-current="page"{% endif %}>اختبار ذاتي</a>
+    </nav>
+  </header>
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <nav aria-label="صفحات إضافية">
+      <a href="{{ url_for('report') }}">إذا حدث خطأ</a>
+      <a href="{{ url_for('about') }}">عن المشروع</a>
+    </nav>
+    <p>الدرع الرقمي مشروع تعليمي لمدرسة حوفا المزار الثانوية الشاملة للبنين.</p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

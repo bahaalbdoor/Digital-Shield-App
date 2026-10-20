@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}اختبار ذاتي · الدرع الرقمي{% endblock %}
+{% block content %}
+<header class="page-intro">
+  <p class="eyebrow">اختبار ذاتي</p>
+  <h1>ماذا تعلمت؟</h1>
+  <p class="lede">ستة أسئلة قصيرة عن كلمات المرور والتصيّد وتسريب البيانات. تبقى نتيجتك في تبويب المتصفح هذا. لا يُرسل شيء.</p>
+</header>
+
+<section data-self-check aria-labelledby="check-title">
+  <h2 id="check-title" class="visually-hidden">الأسئلة</h2>
+  <ol class="check-list">
+    <li data-question>
+      <p>أي عينة أصعب تخميناً؟</p>
+      <div class="choices">
+        <button type="button" data-choice>ali2008</button>
+        <button type="button" data-choice data-correct="true">عبارة طويلة فريدة</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>الاسم مع السنة معلومة شخصية وقصيرة. الطول والاختلاف يجعلان العبارة أصعب تخميناً.</p>
+    </li>
+    <li data-question>
+      <p>رسالة تطلب منك الرد بكلمة المرور الحالية. ما هي؟</p>
+      <div class="choices">
+        <button type="button" data-choice>طلب عادي من تقنية المعلومات</button>
+        <button type="button" data-choice data-correct="true">مريبة</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>من يدير النظام فعلاً لا يحتاج أن ترسل له كلمة المرور.</p>
+    </li>
+    <li data-question>
+      <p>ما هو تسريب البيانات؟</p>
+      <div class="choices">
+        <button type="button" data-choice data-correct="true">معلومات خرجت من النظام الذي كان يفترض أن يحفظها</button>
+        <button type="button" data-choice>كلمة مرور أطول من ثمانية أحرف</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>التسريب انكشاف لبيانات، مثل عناوين البريد أو كلمات المرور. الطول عادة مختلفة تخص كلمة المرور.</p>
+    </li>
+    <li data-question>
+      <p>نقرت رابطاً مريباً. ماذا تفعل أولاً؟</p>
+      <div class="choices">
+        <button type="button" data-choice>تكتب كلمة المرور مرة أخرى لفحص الصفحة</button>
+        <button type="button" data-choice data-correct="true">تتوقف وتخبر بالغاً تثق به</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>المزيد من الكتابة قد يسلّم سراً آخر. التوقف وإخبار شخص ما هو خطوة التعافي.</p>
+    </li>
+    <li data-question>
+      <p>لماذا يُعد تكرار كلمة المرور خطراً بعد تسريب؟</p>
+      <div class="choices">
+        <button type="button" data-choice data-correct="true">كلمة واحدة مسربة قد تفتح حساباتك الأخرى</button>
+        <button type="button" data-choice>كلمة المرور الطويلة تصبح قصيرة حين تُعاد</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>يجرّب الناس كلمات المرور المسربة في مواقع أخرى. الكلمة الفريدة تحصر الضرر في حساب واحد.</p>
+    </li>
+    <li data-question>
+      <p>هل عنوان المُرسِل الشبيه علامة خطر؟</p>
+      <div class="choices">
+        <button type="button" data-choice data-correct="true">نعم</button>
+        <button type="button" data-choice>لا، إذا كانت الرسالة مهذبة</button>
+      </div>
+      <p data-feedback hidden></p>
+      <p data-why hidden>النسخة القريبة من عنوان المدرسة أو المورّد دليل شائع، حتى حين تكون الصياغة مهذبة.</p>
+    </li>
+  </ol>
+  <p class="summary" data-score hidden></p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/self-check.js') }}"></script>
+{% endblock %}

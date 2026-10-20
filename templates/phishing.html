@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}التصيّد · الدرع الرقمي{% endblock %}
+{% block content %}
+<header class="page-intro">
+  <p class="eyebrow">التصيّد</p>
+  <h1>التصيّد رسالة مزيفة تريد شيئاً ثميناً.</h1>
+  <p class="lede">قد تبدو الرسالة من المدرسة أو من بنك أو عن جائزة. الهدف غالباً كلمة مرور أو رمز أو الرقم الوطني أو دفعة مال. يستطيع الموظف الحقيقي أن يكلمك وجهاً لوجه. الرسالة الحقيقية لا تحتاج أن ترد عليها بكلمة المرور.</p>
+</header>
+
+<section class="panel" aria-labelledby="flags-title">
+  <h2 id="flags-title">علامات الخطر</h2>
+  <ul class="checklist">
+    <li>الاستعجال: «افعل هذا الآن وإلا فقدت الوصول إلى الامتحان».</li>
+    <li>طلب كلمة المرور الحالية أو رمز أو الرقم الوطني.</li>
+    <li>عنوان مُرسِل غريب أو فيه خطأ إملائي.</li>
+    <li>رابط أو مرفق لم تكن تنتظره.</li>
+    <li>جائزة أو رسوم أو فاتورة وصلت فجأة.</li>
+  </ul>
+</section>
+
+<section data-phish-quiz aria-labelledby="quiz-title">
+  <h2 id="quiz-title">اكتشف رسالة التصيّد</h2>
+  <p>كل بطاقة <strong>مثال تدريبي</strong>. لم تُرسل المدرسة أياً من هذه الرسائل. اختر آمِنة أو مريبة، ثم اقرأ السبب.</p>
+
+  <article class="phish-card" data-phish-item data-verdict="suspicious">
+    <p class="eyebrow">مثال تدريبي · بريد</p>
+    <blockquote>
+      <p><strong>من:</strong> <span class="ltr">portal@hufa-almazar-login.com</span></p>
+      <p>عاجل: أكّد كلمة مرور بوابة المدرسة وإلا فقدت الوصول إلى الامتحان. أجب خلال ساعة.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>المهلة هنا لتستعجلك، والعنوان ليس نطاق المدرسة المعتاد. البوابة الحقيقية لا تطلب إرسال كلمة مرور بوابة المدرسة بالبريد.</p>
+    </div>
+  </article>
+
+  <article class="phish-card" data-phish-item data-verdict="suspicious">
+    <p class="eyebrow">مثال تدريبي · رسالة نصية</p>
+    <blockquote>
+      <p>دفع ولي أمرك الرسوم — اضغط للتحقق من البيانات البنكية. المرجع <span class="ltr">HF-2291</span>.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>خبر الرسوم لا يطلب منك فتح رابط والتحقق من البيانات البنكية. اسأل ولي الأمر أو مكتب المدرسة على رقم تعرفه من قبل.</p>
+    </div>
+  </article>
+
+  <article class="phish-card" data-phish-item data-verdict="suspicious">
+    <p class="eyebrow">مثال تدريبي · رسالة</p>
+    <blockquote>
+      <p>ربحت هاتفاً — أدخل الرقم الوطني لاستلام الجائزة. العرض ينتهي اليوم.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>جائزة مفاجئة تطلب الرقم الوطني فخ. لست مضطراً لإرسال بيانات الهوية حتى «تستلم» شيئاً لم تشترك فيه.</p>
+    </div>
+  </article>
+
+  <article class="phish-card" data-phish-item data-verdict="suspicious">
+    <p class="eyebrow">مثال تدريبي · بريد</p>
+    <blockquote>
+      <p><strong>من:</strong> <span class="ltr">it-support@hufa-almazar.co</span></p>
+      <p>سنعيد ضبط بريد الطلاب الليلة. أجب على هذه الرسالة بكلمة المرور الحالية حتى نبقي حسابك.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>فريق الدرع الرقمي في المدرسة لا يحتاج كلمة المرور الحالية. إعادة الضبط الحقيقية تتم بطريقة تستطيع تأكيدها مع الأشخاص الذين تراهم في المدرسة.</p>
+    </div>
+  </article>
+
+  <article class="phish-card" data-phish-item data-verdict="suspicious">
+    <p class="eyebrow">مثال تدريبي · بريد للموظفين</p>
+    <blockquote>
+      <p><strong>من:</strong> <span class="ltr">supplier@huufa-mazar-payments.com</span></p>
+      <p>الفاتورة المرفقة متأخرة. افتح ملف PDF وادفع اليوم لتجنّب إلغاء رحلة الصف.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>المُرسِل يستخدم نطاقاً شبيهاً، huufa-mazar-payments.com، ويدفعك إلى الدفع. راجع الفاتورة المفاجئة مع الشخص المسؤول عن مدفوعات المدرسة، ولا تفتح الملف أولاً.</p>
+    </div>
+  </article>
+
+  <article class="phish-card" data-phish-item data-verdict="safe">
+    <p class="eyebrow">مثال تدريبي · بريد</p>
+    <blockquote>
+      <p><strong>من:</strong> <span class="ltr">coach.nasser@hufa-almazar.edu.jo</span></p>
+      <p>ينتقل تدريب كرة القدم للصف العاشر ب إلى يوم الخميس الساعة 3 على الملعب المعتاد. الملاحظة نفسها على لوحة الصف. لا حاجة للرد.</p>
+    </blockquote>
+    <div class="choices">
+      <button type="button" data-choice="safe">آمنة</button>
+      <button type="button" data-choice="suspicious">مريبة</button>
+    </div>
+    <div data-feedback hidden>
+      <p data-result-label></p>
+      <p>هذه الملاحظة لا تطلب كلمة مرور ولا دفعة ولا رقم هوية. تستطيع أيضاً مراجعة لوحة الصف. إذا طابقت الرسالة شيئاً تتحقق منه وجهاً لوجه، فمن المعقول أن تعدّها خبراً مدرسياً عادياً.</p>
+    </div>
+  </article>
+
+  <p class="summary" data-phish-summary hidden></p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/phish-quiz.js') }}"></script>
+{% endblock %}
